@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "ltebean" => "yucong1118@gmail.com" }
   s.source       = { :git => "https://github.com/ltebean/LTNavigationbar.git", :tag => 'v2.1.2'}
-  s.source_files = "LTNavigationbar/UINavigationBar+Awesome.{h,m}"
+  s.source_files = "LTNavigationbar/UINavigationBar+Awesome.{h,m}", "LTNavigationbar/LTNavigationBar.{h,m}"
   s.requires_arc = true
   s.platform     = :ios, '7.0'
 
