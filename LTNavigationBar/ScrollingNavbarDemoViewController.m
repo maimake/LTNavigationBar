@@ -8,6 +8,7 @@
 
 #import "ScrollingNavbarDemoViewController.h"
 #import "UINavigationBar+Awesome.h"
+#import "LTNavigationBar.h"
 
 @interface ScrollingNavbarDemoViewController()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -21,7 +22,30 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"Button" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor blueColor];
+    button.frame = CGRectMake(0, 60, 100, 100);
+    
+    [button addTarget:self action:@selector(onPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    LTNavigationBar* bar = (LTNavigationBar*)self.navigationController.navigationBar;
+    bar.subviewsNeedTestHit = @[button];
+    [self.navigationController.navigationBar insertSubview:button atIndex:0];
 }
+
+-(void)onPressed:(id)sender
+{
+    NSLog(@"click the button under the navigation bar");
+}
+
+
+- (IBAction)onPressedButtonOnImageView:(id)sender {
+    NSLog(@"click the button on image view");
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

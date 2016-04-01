@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="r1i-pR-mnD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="r1i-pR-mnD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ol6-pv-3ev">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="CA6-Ac-93j">
                                     <rect key="frame" x="0.0" y="64" width="320" height="190"/>
@@ -38,11 +39,14 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="T8Y-og-A43" style="IBUITableViewCellStyleDefault" id="bN5-oq-e1N">
+                                        <rect key="frame" x="0.0" y="276" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bN5-oq-e1N" id="wxY-p8-Xkx">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T8Y-og-A43">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -58,7 +62,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ol6-pv-3ev" secondAttribute="trailing" constant="-16" id="3SJ-yy-OpP"/>
                             <constraint firstItem="ol6-pv-3ev" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="5EZ-ni-Hkp"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ol6-pv-3ev" secondAttribute="bottom" id="Ok8-Xm-KfZ"/>
+                            <constraint firstItem="ol6-pv-3ev" firstAttribute="bottom" secondItem="kh9-bI-dsS" secondAttribute="bottomMargin" id="PgX-ln-m09"/>
                             <constraint firstItem="ol6-pv-3ev" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="zrI-Fs-jIg"/>
                         </constraints>
                     </view>
@@ -84,7 +88,7 @@
         <!--View Controller-->
         <scene sceneID="09z-n3-nQZ">
             <objects>
-                <viewController id="xqZ-yo-i0i" sceneMemberID="viewController">
+                <viewController id="xqZ-yo-i0i" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n15-dg-Z9Z"/>
                         <viewControllerLayoutGuide type="bottom" id="1wR-b2-lbj"/>
@@ -122,7 +126,7 @@
         <!--Title-->
         <scene sceneID="FSW-9n-0CZ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="yKC-WS-Q4W" customClass="ScrollingNavbarDemoViewController" sceneMemberID="viewController">
+                <viewController id="yKC-WS-Q4W" customClass="ScrollingNavbarDemoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xIv-BB-hMn"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ug-zk-1Gx"/>
@@ -132,19 +136,37 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ywl-LE-mp3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" id="eNZ-sc-ljC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="bL4-mj-mRN">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="193"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-sc-ljC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+                                            <gestureRecognizers/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJV-ja-REn">
+                                            <rect key="frame" x="129" y="75" width="46" height="30"/>
+                                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="onPressedButtonOnImageView:" destination="yKC-WS-Q4W" eventType="touchUpInside" id="6OO-Dt-TFe"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ECL-Pp-JyS" style="IBUITableViewCellStyleDefault" id="kkz-WZ-qQT">
+                                        <rect key="frame" x="0.0" y="279" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kkz-WZ-qQT" id="YMY-kb-IEm">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ECL-Pp-JyS">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -158,9 +180,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ywl-LE-mp3" firstAttribute="bottom" secondItem="e9l-sS-T8G" secondAttribute="bottomMargin" id="9mY-gL-eLR"/>
                             <constraint firstItem="Ywl-LE-mp3" firstAttribute="top" secondItem="xIv-BB-hMn" secondAttribute="bottom" constant="-64" id="Rrz-pS-6Fl"/>
                             <constraint firstItem="Ywl-LE-mp3" firstAttribute="leading" secondItem="e9l-sS-T8G" secondAttribute="leadingMargin" constant="-16" id="VEV-n2-Hvg"/>
-                            <constraint firstItem="2Ug-zk-1Gx" firstAttribute="top" secondItem="Ywl-LE-mp3" secondAttribute="bottom" id="icb-oD-3iZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ywl-LE-mp3" secondAttribute="trailing" constant="-16" id="nty-0d-0BH"/>
                         </constraints>
                     </view>
@@ -184,7 +206,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zZm-IN-34S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="demo" id="0Y9-2Z-cSP"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hQl-vu-99O">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hQl-vu-99O" customClass="LTNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -220,9 +242,4 @@
     <resources>
         <image name="bg.jpg" width="1000" height="667"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

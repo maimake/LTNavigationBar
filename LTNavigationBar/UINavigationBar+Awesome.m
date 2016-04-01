@@ -22,14 +22,26 @@ static char overlayKey;
     objc_setAssociatedObject(self, &overlayKey, overlay, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+-(UIImage*)emptyImage
+{
+    UIImage* rtn = objc_getAssociatedObject(self, _cmd);
+    if (!rtn) {
+        rtn = [UIImage new];
+        objc_setAssociatedObject(self, _cmd, rtn, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return rtn;
+}
+
 - (void)lt_setBackgroundColor:(UIColor *)backgroundColor
 {
     if (!self.overlay) {
-        [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         self.overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
         self.overlay.userInteractionEnabled = NO;
         self.overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self insertSubview:self.overlay atIndex:0];
+    }
+    if ([self backgroundImageForBarMetrics:UIBarMetricsDefault] != [self emptyImage]) {
+        [self setBackgroundImage:[self emptyImage] forBarMetrics:UIBarMetricsDefault];
     }
     self.overlay.backgroundColor = backgroundColor;
 }

@@ -43,6 +43,8 @@
     self.tableView.delegate = self;
     [self scrollViewDidScroll:self.tableView];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    NSLog(@"nav bar: %@", self.navigationController.navigationBar);
+    NSLog(@"nav item: %@", self.navigationItem);
 }
 
 - (void)viewWillDisappear:(BOOL)animated
